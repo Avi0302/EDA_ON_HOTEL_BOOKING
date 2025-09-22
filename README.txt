@@ -1,97 +1,152 @@
-EDA-HOTEL-BOOKING-ANALYSIS
-Project Summary -
-This Project was given to us by the Almabetter team with an intention to understand the Business done by Hotel Group. This Dataset had two hotels City Hotel and Resort Hotel.The data provided was for 3 years 2015 , 2016 and 2017.we also have the revenue and booking details with number of days of stay and booking cancellation,total number of guests including children. It also specifies guests wait period for booking , repetation of guests,their food choices among others.The data also gives us an analysation of countries from which bookings have been done. We also a agent and other channels who also help in business by booking rooms for guests on the resort and city hotel behalf.
+# 🏨 EDA - Hotel Booking Analysis
 
-The data is divided between city hotel and resort hotel. Hence we can make a fair comparision between both.
+This project was completed as part of the **Almabetter program** with the goal of analyzing and understanding the business performance of a **Hotel Group** that owns two hotels:  
+- **City Hotel**  
+- **Resort Hotel**
 
-Before visualize any data from the data set We will do the data cleaning as to fill any null values and delete any duplicated values and after that we have to do data wrangling.
+The dataset spans **3 years (2015–2017)** and provides detailed information on bookings, cancellations, customer demographics, revenue, and guest preferences.
 
-Also we will do our analysis for both city and resort as individual businesses and in comparision to one another. We will also take help of charts for better analysis.
+---
 
-Dataset:
-The given dataset have information of city and resort hotel. This dataset have 119389 rows and 32 coulumns. The columns from the dataset is as follows:
+## 📌 Project Objectives
+- Perform **Exploratory Data Analysis (EDA)** to uncover insights.  
+- Compare business trends between **City Hotel** and **Resort Hotel**.  
+- Identify **factors impacting cancellations and revenue**.  
+- Suggest **business strategies** for improving bookings, revenue, and guest satisfaction.
 
-Hotel: Type of hotel(City or Resort)
+---
 
-is_cancelled: If the booking was cancelled(1) or not(0)
+## 📂 Dataset Overview
+- **Total Rows:** 119,389  
+- **Total Columns:** 32  
 
-lead_time: Number of days before the actual arrival of the guests
+### Key Features:
+- `hotel`: Type of hotel (City or Resort)  
+- `is_canceled`: Whether the booking was canceled (1) or not (0)  
+- `lead_time`: Days before actual arrival  
+- `arrival_date_year`, `arrival_date_month`, `arrival_date_week_number`  
+- `stays_in_weekend_nights`, `stays_in_week_nights`  
+- `adults`, `children`, `babies`  
+- `meal`: Type of meal booked  
+- `country`: Country of the guest  
+- `market_segment`, `distribution_channel`  
+- `is_repeated_guest`  
+- `previous_cancellations`, `previous_bookings_not_canceled`  
+- `reserved_room_type`, `assigned_room_type`  
+- `booking_changes`  
+- `deposit_type`  
+- `agent`, `company`  
+- `days_in_waiting_list`  
+- `customer_type`  
+- `adr`: Average Daily Rate  
+- `required_car_parking_spaces`  
+- `total_of_special_requests`  
+- `reservation_status`, `reservation_status_date`
 
-arrival_date_year: Year of arrival date
+---
 
-arrival_date_month: Month of arrival date
+## 🔍 Steps Performed
+1. **Data Cleaning**  
+   - Handling missing values.  
+   - Removing duplicates.  
 
-arrival_date_week_number: Week number of year for arrival date
+2. **Data Wrangling**  
+   - Transforming variables into meaningful formats.  
+   - Creating new features for analysis.  
 
-arrival_date_day_of_month: Day of arrival date
+3. **Exploratory Data Analysis (EDA)**  
+   - Distribution of bookings across years.  
+   - Cancellation analysis.  
+   - Customer demographics and preferences.  
+   - Revenue comparison between hotels.  
+   - Seasonal booking patterns.  
 
-stays_in_weekend_nights: Number of weekend nights(Saturday or Sunday) spent at the hotel by the guests.
+4. **Visualization**  
+   - Used **Matplotlib & Seaborn** for plots.  
+   - Comparative charts for **City Hotel vs Resort Hotel**.  
 
-stays_in_weel_nights: Number of weeknights(Monday to Friday) spent at the hotel by the guests.
+---
 
-adults: Number of adults among the guests
+## 📊 Key Insights
 
-children: Number of children
+- **Hotel Preference**
+  - 61.07% preferred **City Hotel**, 38.93% preferred **Resort Hotel**.
 
-babies: Number of babies
+- **Revenue**
+  - City Hotels generated **higher ADR (Average Daily Rate)** → More revenue than Resort Hotels.
 
-meal: Type of meal booked
+- **Parking**
+  - 91.6% guests did **not require parking**; only 8.3% needed 1 parking space.
 
-country: country of the guests
+- **Cancellations**
+  - Over **27% bookings were canceled**.
 
-market_segment: Designation of market segment
+- **Seasonality**
+  - Peak bookings in **July & August** → likely due to summer vacations.
 
-distribution_channel: Name of booking distribution channel
+- **Agents**
+  - Agent **ID 9 and 240** made the highest bookings.  
+  - Agents **1 and 6** made the least bookings.
 
-is_repeated_guest: If the booking was from a repeated guest(1) or not(0)
+- **Customer Origin**
+  - Most bookings from **Portugal, UK, France, and Spain**.
 
-previous_cancellation: Number of previous bookings that were cancelled by the customer prior to the current booking
+- **Booking Channels**
+  - **Online TA** and **Offline TA/TO** were the main booking sources.
 
-previous_bookings_not_cancelled: Number of previous bookins not cancelled by the customer prior to the current booking
+- **Room Types**
+  - Room **Type A and D** were most booked.
 
-reserved_room_type: Code from room type reserved
+- **Guest Loyalty**
+  - Very few repeated guests → scope for loyalty programs.
 
-assigned_room_type: Code of room type assigned
+- **Stay Duration**
+  - Average stay length ≈ **7 days** for both hotel types.
 
-booking_changes: Number of changes made to the booking
+- **Meal Preference**
+  - **Bed & Breakfast (BB)** was the most popular choice.
 
-deposit_type: Type of deposite made by the guest
+- **Correlation**
+  - `arrival_date_year` vs `arrival_date_week_number`: **-0.51 (negative correlation)**  
+  - `stays_in_week_nights` vs `total_stay`: **0.95 (strong positive correlation)**  
+  - `adr` increases with **total number of people**.
 
-agent: ID of travel agent who made the booking
+---
 
-comapny: ID of the company that made the booking
+## 💡 Business Recommendations
+- **City Hotel is leading** in revenue; Resort Hotel needs new marketing strategies.  
+- Diversify **meal plans beyond BB** to improve guest satisfaction.  
+- Increase **international marketing** beyond Portugal for more global guests.  
+- Focus on **cancellation reduction strategies** (e.g., flexible policies, discounts).  
+- Invest in **facilities other than parking**, since demand for parking is low.  
+- Encourage **longer stays**, as revenue increases with duration.  
+- Introduce **loyalty programs** to increase repeat customers.
 
-days_in_waiting_list: Number of the days the booking was in the waiting list
+---
 
-customer_type: Type of customer, assuming one of four categories
+## 📸 Visualizations
+Includes plots such as:
+- Hotel type vs booking count  
+- Monthly booking trends  
+- Cancellation rates  
+- ADR comparison  
+- Country-wise booking heatmap  
+- Meal preferences  
+- Agent contribution  
 
-adr: Average daily rate
+---
 
-required_car_parking_spaces: Number of car parking spaces required bt the customer
+## ⚙️ Tech Stack
+- **Python** (Pandas, NumPy, Matplotlib, Seaborn)  
+- **Jupyter Notebook** (for EDA & Visualization)  
 
-total_of_special_requesrs: Number of special requests made by the customer
+---
 
-reservation_statuse: Reservation status(Canceled, check-out or no-show)
+## 📌 Conclusion
+- **City Hotel** dominates in revenue and bookings.  
+- **Resort Hotel** needs targeted marketing & strategic improvements.  
+- Strong potential exists to **reduce cancellations** and **increase loyalty**.  
+- With the right strategies, ADR and overall business performance can grow significantly.  
 
-reservation_status_date: Date at which the last reservation status was updated
 
-Solution to Business Objective
-#####The hotel and resort business are doing good.Neither the revenue of bookings had negative trends.In order to have maximum success for the hotel group the resort business will need to find more ways to attract guests.They will also need to put more empasis towards other than BB -Meal as that is the maximum sold type meal for both hotel.The max guests are coming from Portugal,They have a sizeable portion of guests coming from other countries.the business has to make more spending in advertisement towards other countries so that this portion keeps increasing. As per the data parking spaces were not required by most of the guests.Hence they can look at other facilities to be given to guests instead of parking spaces.The hotel and resort both have cancellations, In order to decrease the rate of cancellation they have to find innovative ways. The data given shows that the longer the customer stays in the hotel/resort the greater is the revenue made by the Hotel. ####For overall business growth and to increase the rate of ADR we should find ways to retain customers for longer days.
 
-Overall conclusion:
-We found that 61.07% preferred city hotel and 38.93% preferred to book a resort hotel
-The city hotel has made more number of bookings in years 2016 and 2017.The resort did have more bookings in 2016 but there was a noticeable decline in 2017.
-The city hotels have more ADR that means City hotels Generate more Revenue than Resort Hotels
-91.6 % guests did not required the parking space. only 8.3 % guests required only 1 parking space.
-City hotel bookings had a higher waiting time.
-Here, we found that overall more than 27% of booking got cancelled
-The month of July and August had the most Bookings. Summer vaccation can be the reason for the bookings.
-Agent no. 9 and 240 made highest bookings, where as least number of bookings are made by agent no 1 and 6
-The maximum bookings have been done from Portugal,United Kingdom France and Spain.
-The maximum bookings is done through Online TA and Offline TA/TO.
-Room type A and D have been booked maximum in the last 3years.
-We have a very small percentage of clients repeating the hotel and though we have a large clientile
-From above insight we have found that the avrage stay length is 7 days for both types
-Bed and Breakfast(BB)is the most preferred type of booking for Guest.
-arrival_date_year and arrival_date_week_number columns has negative correlation which is -0.51 stays_in_week_nights and total_stay has positive correlation which is 0.95
-As the total number of people increases adr also increases.Thus adr and total people are directly proportional to each other.
